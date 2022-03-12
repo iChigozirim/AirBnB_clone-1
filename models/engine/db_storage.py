@@ -47,7 +47,7 @@ class DBStorage:
             objs = self.__session.query(cls).all()
         dictionary = {}
         for obj in objs:
-            key = "{}.{}".format(obj.__name__, obj.id)
+            key = "{}.{}".format(obj.__class__.__name__, obj.id)
             dictionary[key] = obj
         return dictionary
 
