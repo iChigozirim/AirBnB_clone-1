@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" State Module for HBNB project """
+""" State Module for HBNB project. """
 import models
 from os import getenv
 from models.city import City
-from models.base_model import BaseModel 
+from models.base_model import BaseModel
 from models.base_model import Base
 from sqlalchemy import String
 from sqlalchemy import Column
@@ -23,8 +23,8 @@ class State(BaseModel, Base):
         def cities(self):
             """
                 getter attribute cities that returns the list of City
-                instances with state_id equals to the current 
-                State.id => It will be the FileStorage 
+                instances with state_id equals to the current
+                State.id => It will be the FileStorage
                 relationship between State and City
             """
             city_list = []
