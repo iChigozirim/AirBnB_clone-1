@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" Test for the console """
+""" Test for the console."""
 import unittest
 import pep8
 import console
 HBNBCommand = console.HBNBCommand
+
 
 class TestConsoleDocs(unittest.TestCase):
     '''
@@ -27,7 +28,8 @@ class TestConsoleDocs(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-def test_console_module_docstring(self):
+
+    def test_console_module_docstring(self):
         '''
             Test for the console.py module docstr
         '''
@@ -35,6 +37,7 @@ def test_console_module_docstring(self):
                          "console.py needs a docstring")
         self.assertTrue(len(console.__doc__) >= 1,
                         "console.py needs a docstring")
+
 
     def test_HBNBCommand_class_docstring(self):
         '''
