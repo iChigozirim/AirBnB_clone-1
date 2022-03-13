@@ -115,9 +115,11 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
-        #Split the arguments passed into a list.
-        if len(args) < 1: cmds = []
-        else: cmds = args.split(" ")
+        # Split the arguments passed into a list.
+        if len(args) < 1:
+            cmds = []
+        else:
+            cmds = args.split(" ")
 
         if not cmds[0]:
             print("** class name missing **")
@@ -126,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        #Translate arguments with the syntax <key name>=<value>
+        # Translate arguments with the syntax <key name>=<value>
         # into actual key/value of a dictionary
         dictionary = {}
         for arg in cmds[1:]:
