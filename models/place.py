@@ -12,16 +12,16 @@ from models.review import Review
 from os import getenv
 
 
-# if getenv("HBNB_TYPE_STORAGE") == "db":
-#     place_amenity = Table('place_amenity', Base.metadata,
-#                           Column('place_id',
-#                                  String(60),
-#                                  ForeignKey('places.id'),
-#                                  primary_key=True, nullable=False),
-#                           Column('amenity_id',
-#                                  String(60),
-#                                  ForeignKey('amenities.id'),
-#                                  primary_key=True, nullable=False))
+if getenv("HBNB_TYPE_STORAGE") == "db":
+    place_amenity = Table('place_amenity', Base.metadata,
+                          Column('place_id',
+                                 String(60),
+                                 ForeignKey('places.id'),
+                                 primary_key=True, nullable=False),
+                          Column('amenity_id',
+                                 String(60),
+                                 ForeignKey('amenities.id'),
+                                 primary_key=True, nullable=False))
 
 
 class Place(BaseModel, Base):
@@ -64,15 +64,15 @@ class Place(BaseModel, Base):
             """Getter attribute in case of file storage"""
             return [review for review in models.storage.all(Review)
                     if review.place_id == self.id]
-    #
-    #     @property
-    #     def amenities(self):
-    #         """Getter attribute in case of file storage"""
-    #         return [amenity for amenity in models.storage.all(Amenity)
-    #                 if amenity.id in self.amenity_ids]
-    #
-    #     @amenities.setter
-    #     def amenities(self, obj):
-    #         """Setter method for amenities"""
-    #         if (type(obj) == Amenity):
-    #             self.amenity_ids.append(obj.id)
+
+        @property
+        def amenities(self):
+            """Getter attribute in case of file storage"""
+            return [amenity for amenity in models.storage.all(Amenity)
+                    if amenity.id in self.amenity_ids]
+
+        @amenities.setter
+        def amenities(self, obj):
+            """Setter method for amenities"""
+            if (type(obj) == Amenity):
+                self.amenity_ids.append(obj.id)
