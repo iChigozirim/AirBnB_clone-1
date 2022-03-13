@@ -132,19 +132,19 @@ class HBNBCommand(cmd.Cmd):
         # into actual key/value of a dictionary
         dictionary = {}
         for arg in cmds[1:]:
-           key_value = arg.split('=')
+            key_value = arg.split('=')
 
-           #Modify values of type str:
-           #    1. escape double quotes with backslash.
-           #    2. replace underscores with spaces.
-           v = key_value[1]
-           if v[0] == '"' and v[len(v) - 1] == '"':
-               v = v.replace('_', ' ')
-               for i in range(1, len(v) - 1):
-                   v = list(v)
-                   if v[i] == '"': v[i] = '\"'
-                   v = "".join(v)
-           dictionary[key_value[0]] = v
+           # Modify values of type str:
+           # 1. escape double quotes with backslash.
+           # 2. replace underscores with spaces.
+            v = key_value[1]
+            if v[0] == '"' and v[len(v) - 1] == '"':
+                v = v.replace('_', ' ')
+                for i in range(1, len(v) - 1):
+                    v = list(v)
+                    if v[i] == '"': v[i] = '\"'
+                    v = "".join(v)
+            dictionary[key_value[0]] = v
 
         new_instance = HBNBCommand.classes[cmds[0]]()
         for k, v in dictionary.items():
@@ -155,7 +155,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def help_create(self):
-        """ Help information for the create method """
+        """ Help information for the create method. """
         print("Creates a class of any type")
         print("[Usage]: create <className>\n")
 
