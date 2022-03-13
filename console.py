@@ -134,15 +134,16 @@ class HBNBCommand(cmd.Cmd):
         for arg in cmds[1:]:
             key_value = arg.split('=')
 
-           # Modify values of type str:
-           # 1. escape double quotes with backslash.
-           # 2. replace underscores with spaces.
+            # Modify values of type str:
+            # 1. escape double quotes with backslash..
+            # 2. replace underscores with spaces.
             v = key_value[1]
             if v[0] == '"' and v[len(v) - 1] == '"':
                 v = v.replace('_', ' ')
                 for i in range(1, len(v) - 1):
                     v = list(v)
-                    if v[i] == '"': v[i] = '\"'
+                    if v[i] == '"':
+                        v[i] = '\"'
                     v = "".join(v)
             dictionary[key_value[0]] = v
 
