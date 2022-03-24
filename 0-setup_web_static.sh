@@ -15,12 +15,12 @@ echo "
   </body>
 </html>" > /data/web_static/releases/test/index.html
 
-test -L /data/web_static/current && rm /data/web_static/current || \
+test -L /data/web_static/current && rm /data/web_static/current ; \
 	ln -s /data/web_static/releases/test/ /data/web_static/current
 
 # Give ownership of the /data/ folder to the ubuntu user AND group
-sudo chown -R $USER:$USER /data/
-sudo chmod -R 755 /data
+sudo chown -R "$USER":"$USER" /data/
+sudo chmod -R 755 /data/
 
 print %s "server {
 	listen: 80 default_server;
