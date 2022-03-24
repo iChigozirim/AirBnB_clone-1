@@ -5,29 +5,24 @@ sudo apt update
 sudo apt install -y nginx
 
 mkdir -p /data/web_static/releases/test/
-touch /data/web_static/releases/test/index.html
-echo "
-<html>
-  <head>
-  </head>
-  <body>
-    Holberton School
-  </body>
-</html>" > /data/web_static/releases/test/index.html
+mkdir -p /data/web_static/shared/
+
+echo "Holberton School" >> /data/web_static/releases/test/index.html
 
 test -L /data/web_static/current && rm /data/web_static/current ; \
 	ln -s /data/web_static/releases/test/ /data/web_static/current
 
 # Give ownership of the /data/ folder to the ubuntu user AND group
-sudo chown -R "$USER":"$USER" /data/
+sudo chown -R ubuntu:ubuntu /data/
 sudo chmod -R 755 /data/
 
 print %s "server {
 	listen: 80 default_server;
 	listen[::]:80 default_server;
+	add_header X-Served-By $HOSTNAME;
 
-	root /etc/nginx/html;
-	index index.html index.htm index.nginx-debian.html;
+	root /var/www/html;
+	index index.html index.htm;
 
 	location /hbnb_static {
 		alias /data/web_static/current/;
