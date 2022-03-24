@@ -12,8 +12,8 @@ sudo chmod -R 755 /data/
 
 echo "Holberton School" >> /data/web_static/releases/test/index.html
 
-test -L /data/web_static/current && rm /data/web_static/current ; \
-        sudo ln -s /data/web_static/releases/test/ /data/web_static/current
+#test -L /data/web_static/current && rm /data/web_static/current ; \
+sudo ln -s /data/web_static/releases/test/ /data/web_static/current
 
 print %s "server {
         listen 80 default_server;
