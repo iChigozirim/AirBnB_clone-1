@@ -25,7 +25,7 @@ print %s "server {
 
         location /hbnb_static {
                 alias /data/web_static/current/;
-                internal;
+                index index.html index.htm;
         }
 }" > /etc/nginx/sites-available/default
 
