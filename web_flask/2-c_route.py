@@ -27,12 +27,10 @@ def display_1():
 @app.route("/c/<text>", strict_slashes=False)
 def display_2(text):
     """Displays 'C' followed by the value of the text variable.
-    Replaces underscore symols with space in the variable.
+    Replaces underscore symbols with space in the variable.
     """
-    for i in range(len(text) - 1):
-        if text[i] == '_':
-            text[i] = ' '
-    return “C ” + "".join(text)
+    text = text.replace("_", " ")
+    return “C {}”.format(text)
 
 
 if __name__ == "__main__":
