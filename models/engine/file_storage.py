@@ -39,6 +39,7 @@ class FileStorage:
         """Removes on instance from self.__objects if obj != None."""
         if obj is None:
             return
+        self.reload()
         for k, v in self.__objects.items():
             if obj == v:
                 del self.__objects[k]
