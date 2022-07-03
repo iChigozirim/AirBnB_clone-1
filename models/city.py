@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ City Module for HBNB project """
 from os import getenv
-from models.base_model import Base
-from models.base_model import BaseModel
 from sqlalchemy import String
 from sqlalchemy import Column
 from sqlalchemy import ForeignKey
+from models.base_model import Base
+from models.base_model import BaseModel
 from sqlalchemy.orm import relationship
 
 
