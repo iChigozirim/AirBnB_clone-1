@@ -16,16 +16,10 @@ def do_pack():
 
     time = datetime.datetime.now()
     file_name = "versions/web_static_{}{}{}{}{}{}.tgz".format(
-        time.year,
-        time.month,
-        time.day,
-        time.hour,
-        time.minute,
-        time.second
+        time.year, time.month, time.day, time.hour, time.minute, time.second
     )
 
     res = local("tar -czvf {} web_static".format(file_name), capture=True)
     if res.failed:
         return None
     return file_name
-
