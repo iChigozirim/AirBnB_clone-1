@@ -1,4 +1,8 @@
-# AirBnB clone
+<h1 align="center">AirBnB Clone</h1>
+
+![hbnb_logo](https://user-images.githubusercontent.com/88312276/179302040-4a1a3e16-5d76-440e-8b52-380e1c80b58e.png)
+
+
 ## Description
 This repository contains the second version of the project to build a clone of the [AirBnB](https://www.airbnb.com/)  website.
 
@@ -44,6 +48,10 @@ Run by setting the environmental viriables `HBNB_TYPE_STORAGE=db`.
 In `DBStorage` mode, every time the back-end is initialized, the program intantiates an instance of `DBStorage` called `storage`. The `storage` object is loaded/re-loaded from the MySQL database specified in the environmental variable `HBNB_MYSQL_DB`, using the user `HBNB_MYSQL_USER`, password `HBNB_MYSQL_PWD`, and host `HBNB_MYSQL_HOST`. As class instances are created, updated, or deleted, the `storage` object is used to register changes in the corresponding MySQL database. Connecion and querying is achieved using SQLAlchemy.
 
 Note that the databases specified for `DBStorage` to connect to must already be defined on the MySQL server. This repository includes scripts [setup_mysql_dev.sql](https://github.com/iChigozirim/AirBnB_clone_v2/blob/master/setup_mysql_dev.sql) and [setup_mysql_test.sql](https://github.com/iChigozirim/AirBnB_clone_v2/blob/master/setup_mysql_test.sql) to set up `hbnb_dev_db` and `hbnb_test_db` databases in a MySQL server, respectively.
+
+![database design](https://user-images.githubusercontent.com/88312276/179302959-8904ced1-6ec7-4d5a-8bf0-d9952b14158d.jpg)
+<p align="center">A diagram of the database design.</p>
+
 
 ## Console
 The console is a command line interpreter that allows the manipulation of all classes utilized by the application by making calls on the `storage` object defined above.
