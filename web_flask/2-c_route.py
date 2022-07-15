@@ -30,7 +30,7 @@ def display_2(text):
     Replaces underscore symbols with space in the variable.
     """
     text = text.replace("_", " ")
-    return “C {}”.format(text)
+    return "C {}".format(text)
 
 
 if __name__ == "__main__":
