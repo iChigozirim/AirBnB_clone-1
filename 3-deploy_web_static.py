@@ -45,7 +45,6 @@ def result(*operations):
 
 def do_deploy(archive_path):
     """Distributes an archive to web severs.
-
     Argument:
         archive_path (str): Path to the archive.
     """
