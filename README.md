@@ -31,9 +31,6 @@ In this version, the front-end is designed using HTML5/CSS3 and is served using 
 <br>
 <br>
 
-## Static
-The front-end of this AirBnB clone was designed from scratch using HTML/CSS3 pages integrated using Flask. While the front-end has not yet been officially deployed, screenshots are viewable in the README of the [web_flask](https://github.com/iChigozirim/AirBnB_clone_v2/tree/master/web_flask) directory.
-
 ## Storage
 All classes are handled by one of either two abstracted storage engines, depending on the call - [FileStorage](https://github.com/iChigozirim/AirBnB_clone_v2/blob/master/models/engine/file_storage.py) or [DBStorage](https://github.com/iChigozirim/AirBnB_clone_v2/blob/master/models/engine/db_storage.py).
 
